@@ -21,6 +21,7 @@ It demonstrates how to do the following:
 You can create one with:
 
 ```py
+
 import fiftyone as fo
 import fiftyone.brain as fob
 
@@ -32,6 +33,21 @@ fob.compute_similarity(
     metric="cosine",
     )
 ```
+
+To run reverse image search using Qdrant instead of the default similarity
+index, you need to install Qdrant:
+
+```shell
+pip install qdrant-client
+```
+
+start the Qdrant Docker server:
+
+```bash
+docker run -p "6333:6333" -p "6334:6334" -d qdrant/qdrant
+```
+
+And add `backend="qdrant"` to the `compute_similarity` call!
 
 ## Installation
 
