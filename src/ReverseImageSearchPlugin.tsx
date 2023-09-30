@@ -248,7 +248,7 @@ registerComponent({
   label: "Reverse Image Search",
   component: ReverseImageSearchPanel,
   type: PluginComponentType.Panel,
-  activator: traversalActivator,
+  activator: reverseImageSearchActivator,
   Icon: () => (
     <ReverseImageSearchIcon size={"1rem"} style={{ marginRight: "0.5rem" }} />
   ),
@@ -267,7 +267,7 @@ function getValidBrainRuns() {
   return validBrainRuns;
 }
 
-function traversalActivator() {
+function reverseImageSearchActivator() {
   const dataset = useRecoilValue(fos.dataset);
   const brainMethods = dataset.brainMethods;
   for (let i = 0; i < brainMethods.length; i++) {
