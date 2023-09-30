@@ -4,7 +4,7 @@ version: 1.0.0
 fiftyone:
   version: "*"
 license: Apache 2.0
-url: "https://github.com/jacobmarks/reverse_image_search/blob/main/README.md"
+url: "https://github.com/jacobmarks/reverse-image-search-plugin/blob/main/README.md"
 operators:
   - reverse_search_image
   - open_reverse_image_search_panel
