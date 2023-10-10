@@ -1,5 +1,7 @@
 ## Reverse Image Search Plugin
 
+![search_from_url](https://github.com/jacobmarks/reverse-image-search-plugin/assets/12500356/cc2df982-891a-4cef-967e-67d583134d25)
+
 This plugin allows you to search your dataset for images that are similar to a
 given image. It uses a similarity index to find similar images, which you can
 specify. 
