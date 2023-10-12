@@ -36,20 +36,21 @@ fob.compute_similarity(
     )
 ```
 
-To run reverse image search using Qdrant instead of the default similarity
-index, you need to install Qdrant:
+To run reverse image search using Milvus instead of the default similarity
+index, you need to install Milvus:
 
 ```shell
-pip install qdrant-client
+pip install pymilvus
 ```
 
-start the Qdrant Docker server:
+start the Milvus Docker server:
 
 ```bash
-docker run -p "6333:6333" -p "6334:6334" -d qdrant/qdrant
+wget https://github.com/milvus-io/milvus/releases/download/v2.2.11/milvus-standalone-docker-compose.yml -O docker-compose.yml
+sudo docker compose up -d
 ```
 
-And add `backend="qdrant"` to the `compute_similarity` call!
+And add `backend="milvus"` to the `compute_similarity` call!
 
 ## Installation
 
