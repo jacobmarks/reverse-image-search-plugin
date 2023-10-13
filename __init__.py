@@ -8,18 +8,10 @@
 from bson import json_util
 import json
 from io import BytesIO
-import numpy as np
 from PIL import Image
 
 import fiftyone.operators as foo
 import fiftyone.operators.types as types
-
-BASE_WIDTH = 236
-
-def aspect_ratio_resize(image, base_width):
-    w_percent = base_width / float(image.size[0])
-    h_size = int(float(image.size[1]) * float(w_percent))
-    return image.resize((base_width, h_size), Image.ANTIALIAS)
 
 
 def handle_request(payload):
@@ -37,8 +29,6 @@ def handle_request(payload):
         image_file_like = BytesIO(image_data)
     
     image = Image.open(image_file_like)
-    image = aspect_ratio_resize(image, BASE_WIDTH)
-    image = np.array(image)
     return image
 
 
