@@ -10,15 +10,6 @@ You can search by URL or by uploading an image. The plugin will display the
 image you searched for in the panel, and you can run the reverse image search
 on that image by clicking the "Search" button.
 
-It demonstrates how to do the following:
-
-- use Python and JS in the same plugin
-- create a `Panel` with custom components
-- query dataset properties from JS
-- add an SVG icon to the UI
-- display images in the UI
-- use a drag-and-drop component
-
 **Note:** This plugin requires a similarity index to be present on the dataset. 
 You can create one with:
 
@@ -51,6 +42,10 @@ sudo docker compose up -d
 ```
 
 And add `backend="milvus"` to the `compute_similarity` call!
+
+## Watch On Youtube
+[![Video Thumbnail](https://img.youtube.com/vi/ZlUD1xcZxo4/0.jpg)](https://www.youtube.com/watch?v=ZlUD1xcZxo4&list=PLuREAXoPgT0RZrUaT0UpX_HzwKkoB-S9j&index=9)
+
 
 ## Installation
 
