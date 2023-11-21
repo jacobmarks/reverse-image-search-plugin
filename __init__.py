@@ -27,8 +27,8 @@ def handle_request(payload):
             base64_image = base64_image.split(';base64,')[1]
         image_data = base64.b64decode(base64_image)
         image_file_like = BytesIO(image_data)
-    
-    image = Image.open(image_file_like)
+
+    image = Image.open(image_file_like).convert("RGB")
     return image
 
 
@@ -50,7 +50,7 @@ def run_reverse_image_search(ctx):
     k = ctx.params.get("num_results")
 
     query_image = handle_request(ctx.params)
-    
+
     if hasattr(model, "embed"):
         query_embedding = model.embed(query_image)
     else:
@@ -87,8 +87,8 @@ class OpenReverseImageSearchPanel(foo.Operator):
         ctx.trigger(
             "open_panel",
             params=dict(
-                name="ReverseImageSearchPanel", 
-                isActive=True, 
+                name="ReverseImageSearchPanel",
+                isActive=True,
                 layout="horizontal"
             ),
         )
