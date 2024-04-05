@@ -5,8 +5,6 @@
 |
 """
 
-from bson import json_util
-import json
 from io import BytesIO
 from PIL import Image
 
@@ -60,10 +58,6 @@ def run_reverse_image_search(ctx):
     return view
 
 
-def serialize_view(view):
-    return json.loads(json_util.dumps(view._serialize()))
-
-
 class OpenReverseImageSearchPanel(foo.Operator):
     @property
     def config(self):
@@ -114,10 +108,7 @@ class RunReverseImageSearch(foo.Operator):
 
     def execute(self, ctx):
         view = run_reverse_image_search(ctx)
-        ctx.trigger(
-            "set_view",
-            params=dict(view=serialize_view(view)),
-        )
+        ctx.ops.set_view(view=view)
 
 
 def register(p):

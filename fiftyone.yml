@@ -1,8 +1,8 @@
 name: "@jacobmarks/reverse_image_search"
 description: Find the images in your dataset most similar to an image from the internet!
-version: 1.0.2
+version: 1.0.3
 fiftyone:
-  version: ">=0.21.0"
+  version: ">=0.23.7"
 license: Apache 2.0
 url: "https://github.com/jacobmarks/reverse-image-search-plugin/blob/main/README.md"
 operators:
